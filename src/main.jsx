@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import App from "./App";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 
 //mengimport css react bootstrap yg sudah diinstall

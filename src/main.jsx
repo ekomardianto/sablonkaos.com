@@ -7,7 +7,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //mengimport main css yang sudah dibuat di lokal
-import "./dist/css/main.css";
+import "./assets/css/main.css";
 
 //animate css
 import "animate.css";

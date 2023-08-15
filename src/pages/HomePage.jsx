@@ -17,6 +17,22 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper/modules";
 
+//import gambar produk
+// import produk1 from "../assets/img/produk/1.jpg";
+// import produk2 from "../assets/img/produk/2.jpg";
+// import produk3 from "../assets/img/produk/3.jpg";
+// import produk4 from "../assets/img/produk/4.jpg";
+// import produk5 from "../assets/img/produk/5.jpg";
+// import produk6 from "../assets/img/produk/6.jpg";
+// import produk7 from "../assets/img/produk/7.jpg";
+// import produk8 from "../assets/img/produk/8.jpg";
+// import produk9 from "../assets/img/produk/9.jpg";
+// import produk10 from "../assets/img/produk/10.jpg";
+// import produk11 from "../assets/img/produk/11.jpg";
+// import produk12 from "../assets/img/produk/12.jpg";
+// import produk13 from "../assets/img/produk/13.jpg";
+// import produk14 from "../assets/img/produk/14.jpg";
+
 const HomePage = () => {
   // Start Fungsi untuk membaca file Excel Sheet1
   const [data, setData] = useState([]);
@@ -24,9 +40,7 @@ const HomePage = () => {
   useEffect(() => {
     (async () => {
       /* Download file */
-      const f = await (
-        await fetch("http://localhost:5173/data/produk.xlsx")
-      ).arrayBuffer();
+      const f = await (await fetch("data/produk.xlsx")).arrayBuffer();
       const wb = read(f); // parse the array buffer
       const ws = wb.Sheets[wb.SheetNames[1]]; // get the first worksheet
       const data = utils.sheet_to_json(ws); // generate objects
@@ -84,6 +98,7 @@ const HomePage = () => {
           </Row>
           <Row>
             {data.map((produk) => {
+              console.log(produk.image);
               return (
                 <Col
                   key={produk.id}
@@ -93,10 +108,12 @@ const HomePage = () => {
                   data-aos-delay={produk.delay}
                 >
                   <img
-                    src={"src/assets/img/produk/" + produk.id + ".jpg"}
+                    // src={produk.image}
+                    src={"produk/" + produk.id + ".jpg"}
                     alt={produk.judul}
                     className="w-100 mb-5 rounded-top"
                   />
+
                   <div className="star mb-2 px-2">
                     <i className={produk.star1}></i>
                     <i className={produk.star2}></i>

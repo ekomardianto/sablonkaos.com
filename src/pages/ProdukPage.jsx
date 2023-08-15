@@ -10,9 +10,7 @@ const ProdukPage = () => {
   useEffect(() => {
     (async () => {
       /* Download file */
-      const f = await (
-        await fetch("http://localhost:5173/data/produk.xlsx")
-      ).arrayBuffer();
+      const f = await (await fetch("data/produk.xlsx")).arrayBuffer();
       const wb = read(f); // parse the array buffer
       const ws = wb.Sheets[wb.SheetNames[0]]; // get the first worksheet
       const data = utils.sheet_to_json(ws); // generate objects
@@ -38,7 +36,7 @@ const ProdukPage = () => {
             return (
               <Col key={produk.id}>
                 <img
-                  src={"src/assets/img/produk/" + produk.id + ".jpg"}
+                  src={"produk/" + produk.id + ".jpg"}
                   alt={produk.judul}
                   className="w-100 mb-5 rounded-top"
                 />

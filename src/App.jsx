@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import NavbarComponent from "./components/NavbarComponent";
+import ButtonPesan from "./components/ButtonPesan";
 import FooterComponent from "./components/FooterComponent";
 
 import HomePage from "./pages/HomePage";
@@ -12,6 +13,7 @@ import FaqPage from "./pages/FaqPage";
 function App() {
   return (
     <div>
+      <ButtonPesan />
       <NavbarComponent />
       <Routes>
         <Route path="/" Component={HomePage} />
